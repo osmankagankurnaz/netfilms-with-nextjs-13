@@ -11,8 +11,9 @@ function HomeContainer() {
     return (
         <div>
             <FeaturedMovie movie={Movies.results[0]} />
-            <Categories categories={Genres.genres.slice(0,5)}/>
-            <MoviesSection movies={Movies.results.slice(0,8)}/>
+            <Categories categories={Genres.genres.slice(0, 5)} />
+            <MoviesSection title={'Popular Films'} movies={Movies.results.slice(1, 7)} />
+            <MoviesSection title={'Your Favourites'} movies={Movies.results.slice(7, 14)} />
         </div>
     )
 }
