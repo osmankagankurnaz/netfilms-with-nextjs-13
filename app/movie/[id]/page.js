@@ -4,8 +4,14 @@ import { notFound } from 'next/navigation';
 import MovieContainer from '@/containers/movie';
 import Movies from '@/mocks/movies.json'
 
+async function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve,ms));
+}
 
-function MoviePage({ params, searchParams }) {
+
+async function MoviePage({ params, searchParams }) {
+    await delay(2000);
+
     const movieDetail = Movies.results.find(movie => movie.id.toString() === params.id)
 
     if (!movieDetail) {
